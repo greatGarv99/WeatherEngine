@@ -4,7 +4,17 @@
 {% block body %}
 
 {% if error %}
-<h4 class="container center">Sorry, We couldn't get the weather for you :(</h4>
+
+<br>
+<h4 class="container center" data-aos="zoom-out-up">Sorry, We couldn't get the weather for you :(</h4>
+<br>
+<ol class="container center" style="line-height: 10mm;">
+    <li data-aos="fade-down" data-aos-delay="400">Try checking your internet connection..</li>
+    <li data-aos="fade-down" data-aos-delay="500">Maybe the location doesn't exist</li>
+    <li data-aos="fade-down" data-aos-delay="600">Or it's just a scraper after all ;)</li>
+</ol>
+
+
 {% else %}
 
 <!--Location-name Header-->

@@ -65,7 +65,7 @@ def search(request):
         }
 
         weather_dict={
-            'location':location,
+            'location':location_name,
             'current_temp':current_temp,
             'current_condition':current_condition,
             'forecast':forecast,

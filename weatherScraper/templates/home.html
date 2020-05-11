@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
 </head>
 <body>
     
     <nav class="light-blue" >
         <div class="nav-wrapper container">
-            <a href="#" class="brand-logo center custom-style">WeatherEngine</a>
+            <a href="#" class="brand-logo center" style="font-family: 'Amaranth';">WeatherEngine</a>
         </div>
     </nav>
     <br>
@@ -23,7 +22,7 @@
     <br> <br>
 
 
-    <form method="POST" action="/weather_search">
+    <form method="POST" action="/weather_query">
         {% csrf_token %}
         <div class="container">
             <div class="input-field">
@@ -48,7 +47,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        AOS.init()
+        AOS.init({
+            duration:800
+        })
     </script>
 </body>
 </html>
