@@ -1,0 +1,41 @@
+{% extends 'home.html' %}
+
+
+{% block body %}
+
+{% if error %}
+<h4 class="container center">Sorry, We couldn't get the weather for you :(</h4>
+{% else %}
+
+<!--Location-name Header-->
+<h3 class="conatiner center" style="text-transform: capitalize;" data-aos="zoom-in-down">{{location}}</h3>
+<div class="divider container" data-aos="zoom-out"></div>
+
+<!--Basic Data flexbox with animation-->
+<br>
+<div class="row container">
+
+    <div class="col s12 m4 center" data-aos="zoom-in-up" data-aos-delay="400">
+        <img src="{{condition_img}}" height="150" width="150">
+        <p class="light">{{current_condition}}</p>
+    </div>
+
+
+    <div class="col s12 m4" style="font-size:x-large">
+        <p data-aos="fade-right" class="light" data-aos-delay="800">Current Temperature: {{current_temp}}</p>
+        <p data-aos="fade-right" class="light" data-aos-delay="900">{{forecast}}</p>
+        <p data-aos="fade-right" class="light" data-aos-delay="1000">{{fact_section.Visibility}}</p>
+    </div>
+
+
+    <div class="col s12 m4" style="font-size:x-large">
+        <p data-aos="fade-left" class="light" data-aos-delay="1100">{{fact_section.Pressure}}</p>
+        <p data-aos="fade-left" class="light" data-aos-delay="1200">{{fact_section.Humidity}}</p>
+        <p data-aos="fade-left" class="light" data-aos-delay="1300">{{fact_section.DewPoint}}</p>
+    </div>
+</div>
+<br>
+
+{% endif %}
+
+{% endblock body %}
