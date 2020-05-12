@@ -19,8 +19,10 @@
 
 <br>
 <!--Location-name Header-->
-<h3 class="conatiner center" style="text-transform: capitalize;" id="Weather_info" data-aos="zoom-in-down">{{location}}</h3>
+<h3 class="conatiner center" style="text-transform: capitalize;" id="Weather_info" data-aos="zoom-in-down">{{location}}
+</h3>
 <div class="divider container" data-aos="zoom-out"></div>
+
 
 <!--Basic Data flexbox with animation-->
 <br>
@@ -49,14 +51,15 @@
 
 
 <!--Upcoming 5 hour weather-->
-<h3 class="conatiner center" style="text-transform: capitalize;" data-aos="zoom-in-down" data-aos-delay="100">Upcoming Weather</h3>
+<h3 class="conatiner center" style="text-transform: capitalize;" data-aos="zoom-in-down" data-aos-delay="100">Upcoming
+    Weather</h3>
 <div class="divider container" data-aos="zoom-out"></div>
 <div class="row container">
     <br>
     {% for values in upcoming_hour_data.values %}
     <div class="col s12 m2">
 
-        <div class="card" data-aos="zoom-out-right" data-aos-delay="200">
+        <div class="card" data-aos="zoom-in-right" data-aos-delay="500">
             <div class="card-content" style="margin-bottom: 5px;">
                 <h5 class='center'>{{values.0}}</h5>
             </div>

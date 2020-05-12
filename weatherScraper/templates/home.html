@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,48 +11,52 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
 </head>
+
 <body>
-    
-    <nav class="light-blue" >
+
+    <nav class="light-blue">
         <div class="nav-wrapper container">
             <a href="#" class="brand-logo center" style="font-family: 'Amaranth';">WeatherEngine</a>
         </div>
     </nav>
     <br>
     <h2 class="container center">Where do you wanna search for?</h1>
-    <br> <br>
+        <br> <br>
 
 
-    <form method="POST" action="/weather_query">
-        {% csrf_token %}
-        <div class="container">
-            <div class="input-field">
-                <input type="text" id="location" name="location" class="validate" placeholder="Enter Location" required>
+        <form method="POST" action="/weather_query">
+            {% csrf_token %}
+            <div class="container">
+                <div class="input-field">
+                    <input type="text" id="location" name="location" class="validate" placeholder="Enter Location"
+                        required>
+                </div>
+
+                <div class="input-field center">
+                    <button class="btn waves-effect waves-light green accent-3" type="submit">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
             </div>
+        </form>
 
-            <div class="input-field center">
-            <button class="btn waves-effect waves-light green accent-3" type="submit">Submit
-                <i class="material-icons right">send</i>
-            </button>
-            </div>
-        </div>
-    </form>
 
-    
-    {% block body %}
-        
-    {% endblock body %}
-        
+        {% block body %}
 
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        AOS.init({
-            duration:800,
-            once:true,
-            disable:'phone',
-        })
-    </script>
+        {% endblock body %}
+
+
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+            integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            AOS.init({
+                duration: 800,
+                once: true,
+                disable: 'phone',
+            })
+        </script>
 </body>
+
 </html>

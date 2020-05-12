@@ -9,7 +9,7 @@ def home(request):
 
 def search(request):
     location = request.POST.get('location')
-    query = WeatherQuery(location = location)
+    query = WeatherQuery(location = location) #Saving the search history
     query.save()
 
     try:
@@ -59,6 +59,7 @@ def search(request):
         images_upcoming_hours = [img.get('src') for img in upcoming_hours_temp_list.findAll('img')]
         temp_upcoming_hours = [temp.text for temp in upcoming_hours_temp_list.find('tr',{'class':'h2 soft'}).findAll('td')]
 
+        #Getting a list for parsing the upcoming weather data for 5 hours onto the page
         weather_forecast = [[time[i],images_upcoming_hours[i], temp_upcoming_hours[i]] for i in range(6)]
         upcoming_hour_data = {
             'hour0':weather_forecast[0],
@@ -69,6 +70,7 @@ def search(request):
             'hour5':weather_forecast[5],
         }
 
+        #The final dict that's passed to the page
         weather_dict={
             'location':location_name,
             'current_temp':current_temp,
