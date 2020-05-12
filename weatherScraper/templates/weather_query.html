@@ -8,17 +8,18 @@
 <br>
 <h4 class="container center" data-aos="zoom-out-up">Sorry, We couldn't get the weather for you :(</h4>
 <br>
-<ol class="container center" style="line-height: 10mm;">
+<ul class="container browser-default" style="line-height: 10mm;">
     <li data-aos="fade-down" data-aos-delay="400">Try checking your internet connection..</li>
     <li data-aos="fade-down" data-aos-delay="500">Maybe the location doesn't exist</li>
     <li data-aos="fade-down" data-aos-delay="600">Or it's just a scraper after all ;)</li>
-</ol>
+</ul>
 
 
 {% else %}
 
+<br>
 <!--Location-name Header-->
-<h3 class="conatiner center" style="text-transform: capitalize;" data-aos="zoom-in-down">{{location}}</h3>
+<h3 class="conatiner center" style="text-transform: capitalize;" id="Weather_info" data-aos="zoom-in-down">{{location}}</h3>
 <div class="divider container" data-aos="zoom-out"></div>
 
 <!--Basic Data flexbox with animation-->
@@ -45,6 +46,32 @@
     </div>
 </div>
 <br>
+
+
+<!--Upcoming 5 hour weather-->
+<h3 class="conatiner center" style="text-transform: capitalize;" data-aos="zoom-in-down" data-aos-delay="100">Upcoming Weather</h3>
+<div class="divider container" data-aos="zoom-out"></div>
+<div class="row container">
+    <br>
+    {% for values in upcoming_hour_data.values %}
+    <div class="col s12 m2">
+
+        <div class="card" data-aos="zoom-out-right" data-aos-delay="200">
+            <div class="card-content" style="margin-bottom: 5px;">
+                <h5 class='center'>{{values.0}}</h5>
+            </div>
+
+            <div class="card-image valign-wrapper">
+                <img src="{{values.1}}" class="center-align" width="80" height="80">
+            </div>
+
+            <div class="card-content">
+                <h6 class='center'>{{values.2}}</h5>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endif %}
 

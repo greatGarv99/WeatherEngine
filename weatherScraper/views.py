@@ -58,10 +58,15 @@ def search(request):
         time = [time.text for time in upcoming_hours_temp_list.find('tr',{'class':'h2'}).findAll('td')]
         images_upcoming_hours = [img.get('src') for img in upcoming_hours_temp_list.findAll('img')]
         temp_upcoming_hours = [temp.text for temp in upcoming_hours_temp_list.find('tr',{'class':'h2 soft'}).findAll('td')]
+
+        weather_forecast = [[time[i],images_upcoming_hours[i], temp_upcoming_hours[i]] for i in range(6)]
         upcoming_hour_data = {
-            'time':time,
-            'images':images_upcoming_hours,
-            'temp':temp_upcoming_hours,
+            'hour0':weather_forecast[0],
+            'hour1':weather_forecast[1],
+            'hour2':weather_forecast[2],
+            'hour3':weather_forecast[3],
+            'hour4':weather_forecast[4],
+            'hour5':weather_forecast[5],
         }
 
         weather_dict={
