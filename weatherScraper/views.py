@@ -17,7 +17,7 @@ def search(request):
         First searching for the desired location and getting the required page's link.
         """
 
-        primary_search_url  = 'https://www.timeanddate.com/weather/?query='+location.replace(" ",'')
+        primary_search_url  = 'https://www.timeanddate.com/weather/?query='+location.replace(" ",'+')
         response1 = requests.get(primary_search_url)
 
         primary_soup = BeautifulSoup(response1.text, features='html.parser')
