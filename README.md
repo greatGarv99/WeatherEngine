@@ -13,7 +13,7 @@ Register yourself as the superuser --> \
 Run the app simply by --> \
 `python3 manage.py runserver` 
 
-Move to the localhost:5000, and enjoy the app!\
+Move to the localhost:5000, and enjoy the app! 
 
 
 To view the search history just go to */admin* and fill the credentials you have registered while creating the superuser.
